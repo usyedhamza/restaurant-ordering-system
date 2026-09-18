@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The Chai House</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Opening animation -->
+<div class="intro">
+
+    <div class="intro-logo">
+        <span>THE</span>
+        <h1>CHAI HOUSE</h1>
+        <span>EST. 2026</span>
+    </div>
+
+</div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+
+        <div class="logo">
+            THE CHAI HOUSE
+        </div>
+
+        <div class="nav-links">
+            <a href="#menu">Menu</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <button class="cart-button">
+                🛒 <span id="cart-count">0</span>
+            </button>
+        </div>
+
+    </nav>
+
+
+    <!-- Hero Section -->
+    <header class="hero">
+
+        <div class="hero-content">
+
+            <p class="eyebrow">
+                EST. 2026 • FRESH & HANDCRAFTED
+            </p>
+
+            <h1>
+                Good food.<br>
+                Good moments.
+            </h1>
+
+            <p class="hero-description">
+                A modern dining experience built around
+                fresh ingredients, bold flavours and warm hospitality.
+            </p>
+
+            <a href="#menu" class="primary-button">
+                Explore Menu
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- Signature Section -->
+    <section class="signature">
+
+        <div class="section-heading">
+            <p class="eyebrow">CHEF'S SELECTION</p>
+            <h2>Our signatures</h2>
+        </div>
+
+        <div class="food-slider">
+
+    <button class="slider-arrow prev" id="prevBtn">
+        ←
+    </button>
+
+    <article class="food-slide active">
+        <div class="slide-image biryani image">
+    <img 
+    src="https://www.vibehausbrew.com/assets/chicken_biryani_bowl-CyCDPw6W.webp"
+    alt="Chicken Biryani"
+
+
+>
+  </div>
+
+
+        <div class="slide-content">
+
+            <p class="eyebrow">01 / 03</p>
+
+            <h3> Biryani </h3>
+
+            <p class="slide-description">
+                Fragrant basmati rice, aromatic spices and Tender chicken, slow-cooked to perfection.
+            </p>
+
+            <div class="slide-bottom">
+
+                <strong>₹249</strong>
+
+               <button class="add-button" data-name="Biryani" data-price="249">
+    + Add
+</button>
+
+            </div>
+
+        </div>
+
+    </article>
+
+
+    <article class="food-slide">
+
+        <div class="slide-image">
+    <img 
+        src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=1200&q=85"
+        alt="House Pizza"
+    >
+</div>
+
+        <div class="slide-content">
+
+            <p class="eyebrow">02 / 03</p>
+
+            <h3>House Pizza</h3>
+
+            <p class="slide-description">
+                Fresh vegetables, mozzarella and our signature sauce.
+            </p>
+
+            <div class="slide-bottom">
+
+                <strong>₹299</strong>
+
+                <button class="add-button" data-name="House Pizza" data-price="299">
+    + Add
+</button>
+
+            </div>
+
+        </div>
+
+    </article>
+
+
+    <article class="food-slide">
+
+      <div class="slide-image">
+    <img 
+        src="https://erpin.com.tr/assets/img/urun-cekimi/yemek/yemek_hero_1_1772756997071.png"
+        alt="Classic Burger"
+    >
+</div>
+
+        <div class="slide-content">
+
+            <p class="eyebrow">03 / 03</p>
+
+            <h3>Classic Burger</h3>
+
+            <p class="slide-description">
+                Crispy lettuce, melted cheese and house-made sauce.
+            </p>
+
+            <div class="slide-bottom">
+
+                <strong>₹179</strong>
+
+                <button class="add-button" data-name="Classic Burger" data-price="179">
+    + Add
+</button>
+
+            </div>
+
+        </div>
+
+    </article>
+
+
+    <button class="slider-arrow next" id="nextBtn">
+        →
+    </button>
+
+</div>
+
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu-section">
+
+        <div class="section-heading">
+            <p class="eyebrow">DISCOVER</p>
+            <h2>Explore our menu</h2>
+        </div>
+
+        <div class="categories">
+
+            <button class="category active">All</button>
+            <button class="category">Starters</button>
+            <button class="category">Main Course</button>
+            <button class="category">Drinks</button>
+            <button class="category">Desserts</button>
+
+        </div>
+
+    </section>
+
+
+    <!-- About -->
+    <section id="about" class="about">
+
+        <p class="eyebrow">OUR STORY</p>
+
+        <h2>
+            Simple ingredients.<br>
+            Serious flavour.
+        </h2>
+
+        <p>
+            We believe great food doesn't need to be complicated.
+            Our kitchen focuses on fresh ingredients, thoughtful
+            preparation and flavours worth coming back for.
+        </p>
+
+    </section>
+
+
+    <!-- Contact -->
+    <footer id="contact">
+
+        <h2>THE CHAI HOUSE</h2>
+
+        <p>
+            Open daily · 11:00 AM – 11:00 PM
+        </p>
+
+        <p>
+            Your Restaurant Address
+        </p>
+
+    </footer>
+    <!-- CART DRAWER -->
+
+<div class="cart-overlay" id="cartOverlay"></div>
+
+<aside class="cart-drawer" id="cartDrawer">
+
+    <div class="cart-header">
+
+        <h2>Your Order</h2>
+
+        <button id="closeCart">×</button>
+
+    </div>
+
+    <div class="cart-items" id="cartItems">
+
+        <p class="empty-cart">
+            Your cart is empty.
+        </p>
+
+    </div>
+
+    <div class="cart-footer">
+
+        <div class="cart-total">
+            <span>Total</span>
+            <strong id="cartTotal">₹0</strong>
+        </div>
+
+        <button class="checkout-button" id="placeOrder">
+            Place Order
+        </button>
+
+    </div>
+
+</aside>
+
+<div class="order-success" id="orderSuccess">
+
+    <div class="success-content">
+
+        <p class="eyebrow">ORDER RECEIVED</p>
+
+        <h2>Thank you.</h2>
+
+        <p>
+            Your order has been sent to the Kitchen.
+        </p>
+
+        <div class="order-number">
+            ORDER #1042
+        </div>
+
+        <button id="closeSuccess">
+            Back to menu
+        </button>
+
+    </div>
+
+</div>
+    <script src="app.js"></script>
+
+</body>
+</html>
