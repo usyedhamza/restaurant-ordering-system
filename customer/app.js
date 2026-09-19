@@ -325,7 +325,7 @@ let order = {
     createdAt: new Date().toISOString()
 };
 
-fetch("http://localhost:3000/orders", {
+fetch("https://restaurant-ordering-api-stxb.onrender.com/orders",  {
     method: "POST",
 
     headers: {
