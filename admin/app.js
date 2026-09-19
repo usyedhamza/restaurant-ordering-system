@@ -1,4 +1,4 @@
-fetch("http://localhost:3000/orders")
+fetch("https://restaurant-ordering-api-stxb.onrender.com/orders")
     .then(function(response) {
 
         return response.json();
