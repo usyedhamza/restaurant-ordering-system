@@ -13,7 +13,15 @@ let orders = [];
 app.get("/", function(req, res) {
     res.send("Restaurant server is running!");
 });
+app.delete("/orders", function(req, res) {
+    orders = [];
 
+    console.log("All orders cleared.");
+
+    res.json({
+        message: "All orders cleared!"
+    });
+});
 app.post("/orders", function(req, res) {
     let order = req.body;
 
