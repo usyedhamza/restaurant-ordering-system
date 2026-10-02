@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#171715" />
+    <title>The Chai House</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="intro">
+      <div class="intro-logo">
+        <span>THE</span>
+        <h1>CHAI HOUSE</h1>
+        <span>EST. 2026</span>
+      </div>
+    </div>
+
+    <nav class="navbar">
+      <a class="logo" href="#top">THE CHAI HOUSE</a>
+      <div class="nav-links">
+        <a href="#menu">Menu</a><a href="#about">About</a
+        ><button class="cart-button" id="openCart">
+          🛒 <span id="cart-count">0</span>
+        </button>
+      </div>
+    </nav>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-content">
+          <p class="eyebrow">EST. 2026 • FRESH & HANDCRAFTED</p>
+          <h1>Good food.<br />Good moments.</h1>
+          <p class="hero-description">
+            A modern dining experience built around fresh ingredients, bold
+            flavours and warm hospitality.
+          </p>
+          <a href="#menu" class="primary-button">Explore Menu</a>
+        </div>
+      </section>
+
+      <section class="order-mode" aria-label="Order type">
+        <p class="eyebrow">HOW WOULD YOU LIKE TO ORDER?</p>
+        <div class="mode-switch">
+          <button class="mode active" data-mode="dine-in">Dine in</button
+          ><button class="mode" data-mode="takeaway">Takeaway</button
+          ><button class="mode" data-mode="delivery">Delivery</button>
+        </div>
+        <p class="table-note" id="tableNote">
+          Table ordering enabled. Your table:
+          <strong id="tableNumber">12</strong>
+        </p>
+      </section>
+
+      <section class="signature">
+        <div class="section-heading">
+          <p class="eyebrow">CHEF'S SELECTION</p>
+          <h2>Our signatures</h2>
+        </div>
+        <div class="food-slider">
+          <button class="slider-arrow prev" id="prevBtn">←</button>
+          <div id="signatureSlides"></div>
+          <button class="slider-arrow next" id="nextBtn">→</button>
+        </div>
+      </section>
+
+      <section id="menu" class="menu-section">
+        <div class="section-heading">
+          <p class="eyebrow">DISCOVER</p>
+          <h2>Explore our menu</h2>
+        </div>
+        <div class="categories" id="categories"></div>
+        <div class="menu-grid" id="menuGrid">
+          <div class="loading">Loading menu…</div>
+        </div>
+      </section>
+
+      <section id="about" class="about">
+        <p class="eyebrow">OUR STORY</p>
+        <h2>Simple ingredients.<br />Serious flavour.</h2>
+        <p>
+          We believe great food doesn't need to be complicated. Our kitchen
+          focuses on fresh ingredients, thoughtful preparation and flavours
+          worth coming back for.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <h2>THE CHAI HOUSE</h2>
+      <p>Open daily · 11:00 AM – 11:00 PM</p>
+      <p>Your Restaurant Address · Bhopal</p>
+    </footer>
+
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <aside class="cart-drawer" id="cartDrawer">
+      <div class="cart-header">
+        <div>
+          <p class="eyebrow">YOUR ORDER</p>
+          <h2>Cart</h2>
+        </div>
+        <button id="closeCart">×</button>
+      </div>
+      <div class="cart-items" id="cartItems"></div>
+      <div class="checkout-box">
+        <div class="total-row">
+          <span>Subtotal</span><strong id="cartTotal">₹0</strong>
+        </div>
+        <div id="deliverySummary" class="delivery-summary"></div>
+        <button class="checkout-button" id="placeOrder">Place Order</button>
+      </div>
+    </aside>
+
+    <div class="checkout-overlay" id="checkoutOverlay">
+      <div class="checkout-modal">
+        <button class="modal-close" id="closeCheckout">×</button>
+        <p class="eyebrow">ORDER DETAILS</p>
+        <h2>Complete your order</h2>
+        <div class="checkout-type" id="checkoutType"></div>
+        <div id="customerFields"></div>
+        <label
+          >Payment<select id="paymentMethod">
+            <option value="pay-at-counter">Pay at counter</option>
+            <option value="upi">UPI</option>
+          </select></label
+        ><button class="primary-button full" id="confirmOrder">
+          Confirm order
+        </button>
+        <p class="form-message" id="formMessage"></p>
+      </div>
+    </div>
+
+    <div class="order-success" id="orderSuccess">
+      <div class="success-card">
+        <span class="success-mark">✓</span>
+        <p class="eyebrow">ORDER RECEIVED</p>
+        <h2>Thank you.</h2>
+        <p id="successText">Your order has been sent to the restaurant.</p>
+        <div class="order-number" id="successOrderNumber"></div>
+        <button class="primary-button" id="closeSuccess">Back to menu</button>
+      </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+    <script src="app.js"></script>
+  </body>
+</html>

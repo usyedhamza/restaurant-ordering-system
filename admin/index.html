@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#171715" />
+    <title>The Chai House · Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="dashboard-header">
+      <div>
+        <p class="eyebrow">THE CHAI HOUSE</p>
+        <h1>Control room</h1>
+      </div>
+      <div class="status"><span></span> Online</div>
+    </header>
+    <nav class="admin-nav">
+      <button class="tab active" data-tab="dashboard">Overview</button
+      ><button class="tab" data-tab="orders">Orders</button
+      ><button class="tab" data-tab="menu">Menu & pricing</button>
+    </nav>
+    <main class="dashboard">
+      <section class="tab-panel active" id="dashboardPanel">
+        <div class="page-title">
+          <div>
+            <p class="eyebrow">TODAY</p>
+            <h2>Restaurant overview</h2>
+          </div>
+          <button class="refresh" id="refresh">Refresh</button>
+        </div>
+        <div class="stats">
+          <article>
+            <span>Orders</span><strong id="statOrders">0</strong>
+          </article>
+          <article>
+            <span>Sales</span><strong id="statSales">₹0</strong>
+          </article>
+          <article>
+            <span>Delivery</span><strong id="statDelivery">0</strong>
+          </article>
+          <article>
+            <span>Pending</span><strong id="statPending">0</strong>
+          </article>
+        </div>
+        <div class="quick">
+          <div>
+            <p class="eyebrow">LIVE</p>
+            <h3>Latest orders</h3>
+          </div>
+          <div id="latestOrders" class="mini-orders"></div>
+        </div>
+      </section>
+      <section class="tab-panel" id="ordersPanel">
+        <div class="page-title">
+          <div>
+            <p class="eyebrow">LIVE ORDERS</p>
+            <h2>Orders</h2>
+          </div>
+          <span id="orderCount">0 orders</span>
+        </div>
+        <div class="filters">
+          <button class="filter active" data-filter="all">All</button
+          ><button class="filter" data-filter="new">New</button
+          ><button class="filter" data-filter="preparing">Preparing</button
+          ><button class="filter" data-filter="ready">Ready</button
+          ><button class="filter" data-filter="completed">Completed</button
+          ><button class="filter" data-filter="delivery">Delivery</button>
+        </div>
+        <div id="orders" class="orders"></div>
+      </section>
+      <section class="tab-panel" id="menuPanel">
+        <div class="page-title">
+          <div>
+            <p class="eyebrow">MANAGEMENT</p>
+            <h2>Menu & pricing</h2>
+          </div>
+          <button class="primary" id="addItem">+ Add item</button>
+        </div>
+        <p class="helper">
+          Change a price or mark an item sold out here. Customer menus update
+          from the same menu data.
+        </p>
+        <div id="menuAdmin" class="menu-admin"></div>
+      </section>
+    </main>
+    <div class="modal" id="itemModal">
+      <div class="modal-card">
+        <button class="close" id="closeModal">×</button>
+        <p class="eyebrow">MENU ITEM</p>
+        <h2 id="modalTitle">Add item</h2>
+        <form id="itemForm">
+          <input type="hidden" id="itemId" /><label
+            >Name<input id="itemName" required /></label
+          ><label
+            >Category<input
+              id="itemCategory"
+              required
+              placeholder="Main Course" /></label
+          ><label
+            >Price (₹)<input
+              id="itemPrice"
+              type="number"
+              min="0"
+              required /></label
+          ><label
+            >Description<textarea
+              id="itemDescription"
+              rows="3"
+            ></textarea></label
+          ><label>Image URL<input id="itemImage" type="url" /></label
+          ><label class="check"
+            ><input id="itemAvailable" type="checkbox" checked />
+            Available</label
+          ><button class="primary full" type="submit">Save item</button>
+          <p id="itemMessage" class="message"></p>
+        </form>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
